@@ -34,6 +34,6 @@ jobs:
         script: |
           pm2 delete all
           cd /home/desturo/project/react-backend/
-          git pull
+          git pull origin deploy
           npm i
           pm2 start npm -- start
