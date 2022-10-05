@@ -3,7 +3,11 @@ const app = express()
 const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io")
-const io = new Server(server)
+const io = new Server(server, {
+  cors: {
+    origin: "*"
+  }
+})
 const PORT = process.env.PORT || 3500
 
 app.get('/', (req, res) => {
@@ -11,7 +15,7 @@ app.get('/', (req, res) => {
 })
 
 io.on('connection', (socket) => {
-  console.log(`connected a new user: ${socket}`);
+  console.log(`${socket.id} just connected.`);
 })
 
 server.listen(PORT, () => {
