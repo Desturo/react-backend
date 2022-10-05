@@ -11,7 +11,7 @@ const io = new Server(server, {
 const PORT = process.env.PORT || 3500
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Hello Worlt!')
 })
 
 io.on('connection', (socket) => {
