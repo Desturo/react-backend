@@ -18,7 +18,6 @@ app.get('/', (req, res) => {
 })
 
 io.on('connection', (socket) => {
-  console.log(`${socket.id} just connected.`);
 
   socket.on('message-send', (message) => { 
     socket.broadcast.emit('message-recieve', { user: socket.id, message: message})
@@ -28,5 +27,4 @@ io.on('connection', (socket) => {
 
 
 server.listen(PORT, () => {
-  console.log(`listening on port ${PORT}`);
 })
