@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 io.on('connection', (socket) => {
 
   socket.on('message-send', (data) => { 
-    socket.broadcast.emit('message-recieve', { user: data.user, message: data.message})
+    socket.broadcast.emit('message-recieve', { user: data.user, message: data.message, dice: data.dice})
   })
 })
 
