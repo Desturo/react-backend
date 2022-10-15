@@ -21,8 +21,7 @@ io.on('connection', (socket) => {
   console.log(`${socket.id} just connected.`);
 
   socket.on('message-send', (message) => { 
-    socket.broadcast.emit('message-recieve', 'message'
-  })
+    socket.broadcast.emit('message-recieve', message)
 })
 
 
