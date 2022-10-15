@@ -21,7 +21,7 @@ io.on('connection', (socket) => {
   console.log(`${socket.id} just connected.`);
 })
 
-io.on('message-send', (socket) => { 
+io.on('message-send', (message) => { 
   console.log(message);
 })
 
