@@ -11,6 +11,8 @@ const io = new Server(server, {
 })
 const PORT = process.env.PORT || 3500
 
+app.use(express.static('/var/www/html/build'));
+
 app.get('/', (req, res) => {
   res.send('Hello Worlt!')
 })
