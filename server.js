@@ -21,6 +21,10 @@ io.on('connection', (socket) => {
   console.log(`${socket.id} just connected.`);
 })
 
+io.on('message-send', (socket) => { 
+  console.log(message);
+})
+
 server.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 })
