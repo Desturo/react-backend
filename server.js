@@ -19,11 +19,13 @@ app.get('/', (req, res) => {
 
 io.on('connection', (socket) => {
   console.log(`${socket.id} just connected.`);
+
+  socket.on('message-send', (message) => { 
+    console.log(message);
+  })
 })
 
-io.on('message-send', (message) => { 
-  console.log(message);
-})
+
 
 server.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
